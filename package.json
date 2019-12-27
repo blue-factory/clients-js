@@ -1,0 +1,25 @@
+{
+  "name": "clients",
+  "version": "0.0.1",
+  "description": "clients written in javascript to generate communication to micro apis services",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/microapis/clients-js.git"
+  },
+  "keywords": [
+    "apis",
+    "micro",
+    "javascript",
+    "client"
+  ],
+  "author": "microapis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/microapis/clients-js/issues"
+  },
+  "homepage": "https://github.com/microapis/clients-js#readme"
+}
