@@ -25,6 +25,7 @@ export const promisify = (client: any, name: string): Function => (req: any): Pr
     client[name](req, (err: Error, data: any) => (err ? reject(err) : resolve(data)));
   });
 
+// exports
 export {
   AuthenticationAPI,
   TAuthentication,
