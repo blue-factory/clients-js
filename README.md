@@ -1,4 +1,4 @@
-# Tenpo Lib
+# Micro APIs Javascript clients
 
 ## Commands (Development)
 
