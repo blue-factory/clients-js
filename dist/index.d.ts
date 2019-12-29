@@ -1,5 +1,5 @@
 import AuthenticationAPI, { TAuthentication, TAuthenticationResponse, TAuthenticationVerifyTokenResponse, TAuthenticationVerifyToken } from './authentication';
-import UsersAPI, { TUser } from './user';
+import UsersAPI, { TUser, TUserResponse } from './user';
 export declare type TError = {
     code: number;
     message: string;
@@ -9,4 +9,4 @@ export declare type TErrorResponse = {
     meta?: any;
 };
 export declare const promisify: (client: any, name: string) => Function;
-export { AuthenticationAPI, TAuthentication, TAuthenticationResponse, TAuthenticationVerifyTokenResponse, TAuthenticationVerifyToken, UsersAPI, TUser, };
+export { AuthenticationAPI, TAuthentication, TAuthenticationResponse, TAuthenticationVerifyTokenResponse, TAuthenticationVerifyToken, UsersAPI, TUser, TUserResponse, };
