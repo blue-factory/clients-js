@@ -1,5 +1,11 @@
-import AuthenticationAPI, {TAuthentication} from './authentication'
-import UsersAPI from './user'
+import AuthenticationAPI, {
+  TAuthentication,
+  TAuthenticationResponse,
+  TAuthenticationVerifyTokenResponse,
+  TAuthenticationVerifyToken,
+} from './authentication';
+
+import UsersAPI, { TUser, TUserResponse } from './user';
 
 // TError ...
 export type TError = {
@@ -19,8 +25,13 @@ export const promisify = (client: any, name: string): Function => (req: any): Pr
     client[name](req, (err: Error, data: any) => (err ? reject(err) : resolve(data)));
   });
 
-export { 
+export {
   AuthenticationAPI,
   TAuthentication,
+  TAuthenticationResponse,
+  TAuthenticationVerifyTokenResponse,
+  TAuthenticationVerifyToken,
   UsersAPI,
+  TUser,
+  TUserResponse,
 };
