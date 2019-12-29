@@ -1,6 +1,6 @@
 {
   "name": "microapis-clients",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "clients written in javascript to generate communication to micro apis services",
   "main": "dist/index.js",
   "scripts": {

@@ -1,10 +1,9 @@
 import grpc from 'grpc';
 import * as protoLoader from '@grpc/proto-loader';
-import protoPromisify from '../../util/promisify';
 
 // types
 import { TUser } from '../user';
-import { TErrorResponse } from '../';
+import { TErrorResponse, promisify } from '../';
 
 // define classic grpc response
 export type TAuthenticationResponse = TErrorResponse & {
@@ -93,7 +92,7 @@ class Authentication implements IAuthentication {
       return Promise.reject(new Error('invalid token param'));
     }
 
-    return protoPromisify(this.client, 'verifyToken')({ token });
+    return promisify(this.client, 'verifyToken')({ token });
   }
 
   /**
@@ -119,7 +118,7 @@ class Authentication implements IAuthentication {
       return Promise.reject(new Error('invalid password param'));
     }
 
-    return protoPromisify(this.client, 'login')({ email, password });
+    return promisify(this.client, 'login')({ email, password });
   }
 
   /**
@@ -155,7 +154,7 @@ class Authentication implements IAuthentication {
       return Promise.reject(new Error('invalid user.password param'));
     }
 
-    return protoPromisify(this.client, 'signUp')({ user });
+    return promisify(this.client, 'signUp')({ user });
   }
 }
 

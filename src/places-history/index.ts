@@ -1,9 +1,8 @@
 import grpc from 'grpc';
 import * as protoLoader from '@grpc/proto-loader';
-import protoPromisify from '../../util/promisify';
 
 // types
-import { TErrorResponse } from '../';
+import { TErrorResponse, promisify } from '../';
 
 // define places history message
 export type TPlaceHistory = {
@@ -84,7 +83,7 @@ class PlaceHistory implements IPlaceHistory {
       return Promise.reject(new Error('invalid userId'));
     }
 
-    return protoPromisify(this.client, 'listPlaceHistoryByUserId')({ userId });
+    return promisify(this.client, 'listPlaceHistoryByUserId')({ userId });
   }
 }
 

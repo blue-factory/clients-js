@@ -1,9 +1,8 @@
 import grpc from 'grpc';
 import * as protoLoader from '@grpc/proto-loader';
-import protoPromisify from '../../util/promisify';
 
 // types
-import { TErrorResponse } from '../';
+import { TErrorResponse, promisify } from '../';
 
 export type TCoord = {
   latitude: string;
@@ -95,7 +94,7 @@ class Place implements IPlace {
       return Promise.reject(new Error('invalid userId'));
     }
 
-    return protoPromisify(this.client, 'listByCoord')({ coord, userId });
+    return promisify(this.client, 'listByCoord')({ coord, userId });
   }
 }
 

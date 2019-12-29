@@ -1,7 +1,6 @@
 import grpc from 'grpc';
 import * as protoLoader from '@grpc/proto-loader';
-import protoPromisify from '../../util/promisify';
-import { TErrorResponse } from '../';
+import { TErrorResponse, promisify } from '../';
 
 /**
  * message User {
@@ -91,7 +90,7 @@ class User implements IUser {
       return Promise.reject(new Error('invalid id param'));
     }
 
-    return protoPromisify(this.client, 'userGet')({ user_id: id });
+    return promisify(this.client, 'userGet')({ user_id: id });
   }
 
   /**
@@ -110,7 +109,7 @@ class User implements IUser {
       return Promise.reject(new Error('invalid email param'));
     }
 
-    return protoPromisify(this.client, 'userGetByEmail')({ email });
+    return promisify(this.client, 'userGetByEmail')({ email });
   }
 
   /**
@@ -144,7 +143,7 @@ class User implements IUser {
       return Promise.reject(new Error('invalid user.password param'));
     }
 
-    return protoPromisify(this.client, 'userCreate')({ data: user });
+    return promisify(this.client, 'userCreate')({ data: user });
   }
 
   /**
@@ -168,7 +167,7 @@ class User implements IUser {
       return Promise.reject(new Error('invalid password param'));
     }
 
-    return protoPromisify(this.client, 'userVerifyPassword')({ email, password });
+    return promisify(this.client, 'userVerifyPassword')({ email, password });
   }
 }
 
